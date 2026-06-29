@@ -18,6 +18,7 @@
                     <li><a href="courses.html">Курстар</a></li>
                     <li><a href="about.html">Туралы</a></li>
                     <li><a href="contact.html" class="active">Байланыс</a></li>
+                    <li><a href="cart.html">🛒 Корзина (<span id="cart-count">0</span>)</a></li>
                 </ul>
             </div>
         </nav>
@@ -29,8 +30,8 @@
                 <h2>Бізбен байланысыңыз</h2>
                 <ul class="filter-menu">
                     <li><a href="#contact-form">Форма</a></li>
-                    <li><a href="#contact-info">Байланыс ақпараты</a></li>
-                    <li><a href="#support-video">Қолдау видео</a></li>
+                    <li><a href="#contact-info">Ақпараты</a></li>
+                    <li><a href="#support-video">Видеолар</a></li>
                     <li><a href="#faq">ЕТТПС</a></li>
                 </ul>
             </div>
@@ -119,8 +120,8 @@
 
         <section id="support-video" class="contact-section">
             <div class="container">
-                <h2>Қалай бастамалы болады - LearnHub видеосы</h2>
-                <p style="text-align: center; color: #666; margin-bottom: 30px;">Төменде біздің видео құрылымдарын табыңыз</p>
+                <h2>Сүйейтін видеолар</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 30px;">LearnHub платформасын пайдалануды үйреніңіз</p>
                 
                 <div class="video-grid">
                     <div class="video-item">
@@ -226,12 +227,18 @@
             const messageDiv = document.getElementById('form-message');
             messageDiv.style.display = 'block';
             messageDiv.style.color = '#10b981';
-            messageDiv.textContent = `Рахмет, ${name}! Сіздің хабарламасы қабылданды. Біз көп ұзамай сізге ${email} адресіне жауап жібереміз.`;
+            messageDiv.textContent = `✅ Рахмет, ${name}! Сіздің хабарламасы қабылданды. Біз көп ұзамай сізге ${email} адресіне жауап жібереміз.`;
             document.querySelector('.contact-form').reset();
             setTimeout(() => {
                 messageDiv.style.display = 'none';
             }, 5000);
         }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('learnhubCart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+        updateCartCount();
     </script>
 </body>
 </html>
