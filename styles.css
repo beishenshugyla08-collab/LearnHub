@@ -317,24 +317,28 @@ header {
 .contact-section,
 .audio-section,
 .video-section,
-.about-section {
+.about-section,
+.how-learn-section {
     padding: 60px 0;
 }
 
 .courses-section h2,
 .contact-section h2,
-.about-section h2 {
+.about-section h2,
+.how-learn-section h2 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
 }
 
 .audio-section,
-.video-section {
+.video-section,
+.how-learn-section {
     background-color: var(--light-bg);
 }
 
 .audio-section h2,
-.video-section h2 {
+.video-section h2,
+.how-learn-section h2 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -356,6 +360,46 @@ header {
 .video-item h3 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
+}
+
+.how-learn-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.learn-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.step-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.step-card p {
+    color: var(--text-gray);
 }
 
 .contact-form {
@@ -684,7 +728,8 @@ footer {
     .stats .container,
     .contact-info-grid,
     .team-grid,
-    .achievements-grid {
+    .achievements-grid,
+    .learn-steps {
         grid-template-columns: 1fr;
     }
 
